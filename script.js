@@ -1,38 +1,44 @@
 // JavaScript Lab 1 //
 
 // Task 1   //
-// function formatFullName(firstName, lastName) {
-//     if (!firstName || !lastName) {
-//         return "Invalid name input.";
-//     }
 
-//     firstName=
-//         firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
-//     lastName=
-//         lastName.charAt(0).toUpperCase() + lastName.slice(1).toLowerCase ();
+function formatFullName(firstName, lastName) {
+    if (!firstName || !lastName) {
+        return "Invalid name input.";
+    }
 
-//         return lastName + ", " + firstName;
-// }
+    firstName=
+        firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+    lastName=
+        lastName.charAt(0).toUpperCase() + lastName.slice(1).toLowerCase ();
 
-// console.log(formatFullName("Tyler", "Stallworth"));
+        return lastName + ", " + firstName;
+}
+
+console.log(formatFullName("Tyler", "Stallworth"));
+
+
 
 
 // Task 2       //
-// function calculateTotalCost(price, quantity, taxRate) {
 
-//     if (isNaN(price) || isNaN(quantity) || isNaN(taxRate)) {
-//         return "Invalid input";
-//     }
+function calculateTotalCost(price, quantity, taxRate) {
 
-// // 
-// let totalCost = (price * quantity) * (1 + taxRate);
-// return totalCost;
-// }
+    if (isNaN(price) || isNaN(quantity) || isNaN(taxRate)) {
+        return "Invalid input";
+    }
 
-// console.log(calculateTotalCost(15, 3, 0.08));
-// console.log(calculateTotalCost(7.5, 10, 0.07));
-// console.log(calculateTotalCost(12, 5, 0));
-// console.log(calculateTotalCost("ten", 2, 0.05));
+// 
+let totalCost = (price * quantity) * (1 + taxRate);
+return totalCost;
+}
+
+console.log(calculateTotalCost(15, 3, 0.08));
+console.log(calculateTotalCost(7.5, 10, 0.07));
+console.log(calculateTotalCost(12, 5, 0));
+console.log(calculateTotalCost("ten", 2, 0.05));
+
+
 
 
 // Task 3     //
@@ -55,9 +61,31 @@ console.log(checkEligibility(18, false));
 
 
 
+// Task 4 Redo calculateTotalCost   //
+
+function calculateTotalCost(price, quantity, taxRate, discount) {
+
+    if (isNaN(price) || isNaN(quantity) || isNaN(taxRate)) {
+        return "Invalid input";
+    }
+
+    let subtotal = price * quantity;
+
+    if (discount !== undefined) {
+        if (isNaN(discount)) {
+            return "Invalid input.";
+        }
+        subtotal = subtotal - discount;
+    }
+
+    let totalCost = subtotal * (1 + taxRate);
+
+    return totalCost;
+}
+
+console.log(calculateTotalCost(10, 2, 0.1));
+console.log(calculateTotalCost(10, 2, 0.1, 5));
+console.log(calculateTotalCost("ten", 2, 0.1,));
+console.log(calculateTotalCost(10, 2, 0.1, "hi"));
 
 
-
-
-
-//
