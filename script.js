@@ -18,22 +18,39 @@
 
 
 // Task 2       //
-function calculateTotalCost(price, quantity, taxRate) {
+// function calculateTotalCost(price, quantity, taxRate) {
 
-    if (isNaN(price) || isNaN(quantity) || isNaN(taxRate)) {
-        return "Invalid input";
+//     if (isNaN(price) || isNaN(quantity) || isNaN(taxRate)) {
+//         return "Invalid input";
+//     }
+
+// // 
+// let totalCost = (price * quantity) * (1 + taxRate);
+// return totalCost;
+// }
+
+// console.log(calculateTotalCost(15, 3, 0.08));
+// console.log(calculateTotalCost(7.5, 10, 0.07));
+// console.log(calculateTotalCost(12, 5, 0));
+// console.log(calculateTotalCost("ten", 2, 0.05));
+
+
+// Task 3     //
+
+function checkEligibility(age, isEmployed) {
+    if (age > 18 && isEmployed) {
+        return "You are eligible for the program.";
+    }   else if (age > 18 && !isEmployed) {
+        return "You are conditionally eligible for the program.";
+    } else {
+      return "You are not eligible for the program.";
     }
-
-// 
-let totalCost = (price * quantity) * (1 + taxRate);
-return totalCost;
 }
 
-console.log(calculateTotalCost(15, 3, 0.08));
-console.log(calculateTotalCost(7.5, 10, 0.07));
-console.log(calculateTotalCost(12, 5, 0));
-console.log(calculateTotalCost("ten", 2, 0.05));
-
+console.log(checkEligibility(25, true));
+console.log(checkEligibility(22, false));
+console.log(checkEligibility(17, true));
+console.log(checkEligibility(18, false));
 
 
 
